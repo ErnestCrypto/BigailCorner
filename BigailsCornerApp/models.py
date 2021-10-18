@@ -6,7 +6,7 @@ from django.db.models.deletion import CASCADE
 
 class StockTransaction(models.Model):
     stock_price = models.CharField(max_length=30)
-    date_bought = models.DateField(max_length=10)
+    date_bought = models.DateField()
     
     def __str__(self):
         return self.stock_price + ' : ' + self.date_bought
@@ -15,7 +15,7 @@ class StockTransaction(models.Model):
     
 class Order(models.Model):
     number_of_orders = models.CharField(max_length=10)
-    date_ordered = models.CharField(max_length=10)
+    date_ordered = models.DateField()
 
     def __str__(self):
         return self.number_of_orders + ' : ' + self.date_ordered
@@ -25,7 +25,7 @@ class Order(models.Model):
 class Stock(models.Model):
     stocktransaction = models.OneToOneField(StockTransaction,on_delete=CASCADE)
     number_of_initial_stock = models.CharField(max_length=20)
-    date_stock_was_filled = models.CharField(max_length=10)
+    date_stock_was_filled = models.DateField()
     number_of_remaining_stock = models.CharField(max_length=20)
     
     def __str__(self):
@@ -38,7 +38,7 @@ class Stock(models.Model):
 class Product(models.Model):
     stock = models.OneToOneField(Stock, on_delete=CASCADE)
     total_number_of_products = models.CharField(max_length=20)
-    date_products_were_purchased = models.DateField(max_length=10)
+    date_products_were_purchased = models.DateField()
     products_left_in_store = models.CharField(max_length=20)
     
     def __str__(self):
