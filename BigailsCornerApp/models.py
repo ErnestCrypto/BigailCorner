@@ -58,7 +58,5 @@ class Orderline(models.Model):
     
     
     
-r
-    
     
     
