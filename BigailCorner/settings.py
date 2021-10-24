@@ -38,7 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'BigailsCornerApp.apps.BigailscornerappConfig',
+    'crispy_forms',
+    'rest_framework',
 ]
+
+CRISPI_TEMPLATE_PACK = 'uni_form'
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
